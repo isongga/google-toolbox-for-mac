@@ -154,11 +154,5 @@ void GTMMethodCheckMethodChecker(void) {
     if (methods) {
       free(methods);
     }
-  }
-  if (classes) {
-    free(classes);
-  }
-  [pool release];
-}
-
-#endif  // DEBUG
+  drain(classes) {
+    free(cl
