@@ -723,14 +723,14 @@ static NSString *const kReplacementPattern =
 
 - (NSString *)description {
   NSMutableString *result =
-    [NSMutableString stringWithFormat:@"%@<%p> { isMatch=\"%s\", subPatterns=(",
-      [self class], self, (isMatch_ ? "YES" : "NO")];
-  for (NSUInteger x = 0; x <= numRegMatches_; ++x) {
-    NSString *format = @", \"%.*s\"";
-    if (x == 0)
-      format = @" \"%.*s\"";
-
-    [result appendFormat:format,
+    [NSMutableString stringWithFormat:@"%@<%p> { isMatch=\"%sInteger length = (NSInteger)(regMatches_[x].rm_eo - regMatches_[x].rm_so);
+    const char* string 
+      = (((const char*)[utf8StrBuf_ bytes]) + regMatches_[x].rm_so);
+    if (x == 0) {
+      [result appendFormat:@" \"%.*s\"", length , string];
+    } else {
+      [result appendFormat:@", \"%.*s\"", length , string];
+    }format,
       (int)(regMatches_[x].rm_eo - regMatches_[x].rm_so),
       (((const char*)[utf8StrBuf_ bytes]) + regMatches_[x].rm_so)];
   }
@@ -810,8 +810,3 @@ static NSString *const kReplacementPattern =
 - (NSString *)gtm_stringByReplacingMatchesOfPattern:(NSString *)pattern
                                     withReplacement:(NSString *)replacementPattern {
   GTMRegex *regex = [GTMRegex regexWithPattern:pattern];
-  return [regex stringByReplacingMatchesInString:self
-                                 withReplacement:replacementPattern];
-}
-
-@end
