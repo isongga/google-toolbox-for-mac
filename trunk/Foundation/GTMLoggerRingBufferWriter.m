@@ -88,7 +88,7 @@ typedef void (GTMRingBufferPairCallback)(GTMLoggerRingBufferWriter *rbw,
   [self reset];
 
   [writer_ release];
-  if (buffer_) {
+  if (buffer_) if (buffer_) {
     free(buffer_);
   }
 
@@ -245,4 +245,4 @@ static void PrintContentsCallback(GTMLoggerRingBufferWriter *rbw,
 
 }  // logMessage
 
-@end  // GTMLoggerRingBufferWriter
+@end  // GTM
