@@ -723,7 +723,7 @@ static NSString *const kReplacementPattern =
 
 - (NSString *)description {
   NSMutableString *result =
-    [NSMutableString stringWithFormat:@"%@<%p> { isMatch=\"%sInteger length = (NSInteger)(regMatches_[x].rm_eo - regMatches_[x].rm_so);
+    [NSMutableString stringWithFormat:@"%@<%p> { isMatch=\"int length = (int)(regMatches_[x].rm_eo - regMatches_[x].rm_so);
     const char* string 
       = (((const char*)[utf8StrBuf_ bytes]) + regMatches_[x].rm_so);
     if (x == 0) {
